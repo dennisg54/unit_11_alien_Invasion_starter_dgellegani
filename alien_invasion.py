@@ -3,9 +3,9 @@ import pygame
 from settings import Settings
 from ship import Ship
 
-class AlienInvasion:
-   
+class AlienInvasion:   
     def __init__(self):
+        # Initialize the game and create resources
         pygame.init()
         self.settings = Settings()
         
@@ -21,17 +21,20 @@ class AlienInvasion:
         self.ship = Ship(self)
 
     def run_game(self) -> None:
+        # Main loop of the game
         while self.running:
             self._check_events()
             self._update_screen()
             self.clock.tick(self.settings.FPS)
 
     def _update_screen(self):
+        # Update the screen with the latest game state
         self.screen.blit(self.bg, (0, 0))
-        self.ship        
+        self.ship.draw()        
         pygame.display.flip()
 
     def _check_events(self) -> None:
+        # Check for keyboard and mouse events
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 self.running = False

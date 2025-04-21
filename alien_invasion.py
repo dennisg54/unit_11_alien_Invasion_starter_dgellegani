@@ -3,6 +3,7 @@ import pygame
 from settings import Settings
 from ship import Ship
 from arsenal import ShipArsenal
+from alien import Alien
 
 class AlienInvasion:
     """
@@ -34,6 +35,7 @@ class AlienInvasion:
         self.laser_sound.set_volume(0.5)
 
         self.ship = Ship(self, ShipArsenal(self))
+        self.alien = Alien(self, 10, 10)
 
     def run_game(self) -> None:
         """
@@ -45,6 +47,7 @@ class AlienInvasion:
         while self.running:
             self._check_events()
             self.ship.update()
+            self.alien.update()
             self._update_screen()
             self.clock.tick(self.settings.FPS)
 
@@ -56,6 +59,7 @@ class AlienInvasion:
         """
         # Update the screen with the latest game state
         self.screen.blit(self.bg, (0, 0))
+        self.alien.draw_alien()
         self.ship.draw()        
         pygame.display.flip()
 

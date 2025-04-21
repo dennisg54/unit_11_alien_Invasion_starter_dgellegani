@@ -23,14 +23,13 @@ class Alien(Sprite):
         self.rect.x = x
         self.rect.y = y
         
-        # self.x = float(self.rect.x)
-        # self.y = float(self.rect.y)
+        self.x = float(self.rect.x)
+        self.y = float(self.rect.y)
         
     def update(self) -> None:
-       
-        # self.y -= self.settings.bullet_speed
-        # self.rect.y = self.y
-        pass
+        temp_speed = self.settings.fleet_speed
+        self.x += temp_speed        
+        self.rect.x = self.x
         
     def draw_alien(self) -> None:
         

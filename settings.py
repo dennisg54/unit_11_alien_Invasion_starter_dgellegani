@@ -22,9 +22,10 @@ class Settings:
         self.bullets_amount = 5
         
         self.alien_file = Path.cwd() / "Assets" / "images" / "enemy_4.png"
-        self.fleet_speed = 2
         self.alien_w = 40
         self.alien_h = 40
+        self.fleet_speed = 5
+        self.fleet_direction = 1
         
         self.laser_sound = Path.cwd() / "Assets" / "sound" / "laser.mp3"
         

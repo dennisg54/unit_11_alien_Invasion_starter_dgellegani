@@ -84,7 +84,7 @@ class AlienFleet:
         alien: "Alien"
         for alien in self.fleet:
             alien.y += self.fleet_drop_speed
-            alien.rect.y = alien.y
+            
             
                        
     def update_fleet(self) -> None:

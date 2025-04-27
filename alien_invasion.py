@@ -30,6 +30,7 @@ class AlienInvasion:
         self.alien_fleet = AlienFleet(self)
         self.alien_fleet.createFleet()
 
+
     def run_game(self) -> None:
         
         # Main loop of the game
@@ -39,7 +40,8 @@ class AlienInvasion:
             self.alien_fleet.update_fleet()
             self._update_screen()
             self.clock.tick(self.settings.FPS)
-
+    
+    
     def _update_screen(self):
        
         # Update the screen with the latest game state
@@ -47,6 +49,7 @@ class AlienInvasion:
         self.alien_fleet.draw()
         self.ship.draw()        
         pygame.display.flip()
+
 
     def _check_events(self) -> None:
        
@@ -70,6 +73,7 @@ class AlienInvasion:
             self.ship.moving_right = False
         elif event.key == pygame.K_LEFT:
             self.ship.moving_left = False
+    
     
     def _check_keydown_events(self, event) -> None:
        

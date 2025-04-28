@@ -29,4 +29,5 @@ class Settings:
         self.fleet_drop_speed = 40
         
         self.laser_sound = Path.cwd() / "Assets" / "sound" / "laser.mp3"
+        self.impact_sound = Path.cwd() / "Assets" / "sound" / "impactSound.mp3"
         
